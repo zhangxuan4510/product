@@ -22,38 +22,11 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.33" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
-        <CLASSES>
-          <root url="jar://G:/resource/连接池/commons-collections-3.2.2.jar!/" />
-        </CLASSES>
+        <CLASSES />
         <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://G:/resource/连接池/commons-dbcp-1.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://G:/resource/连接池/commons-pool-1.6.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://G:/resource/连接池/mysql-connector-java-5.1.7-bin.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://G:/resource/jstl-1.2-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

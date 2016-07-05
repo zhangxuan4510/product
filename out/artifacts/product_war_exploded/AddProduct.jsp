@@ -14,7 +14,7 @@
    <div>
        <h2>添加物品信息</h2>
        <hr>
-       <form action="AddProductServlet">
+       <form action="ProductServlet">
            <table>
                <tr>
                    <th>属性</th>
@@ -42,9 +42,8 @@
                </tr>
                <input type="submit" value="提交">
            </table>
+           <input type="text" name="method" value="add" hidden="hidden">
        </form>
-       <a href="index.jsp">主页</a><br>
-       <a href="AddProduct.jsp">添加信息</a>
    </div>
 </body>
 </html>

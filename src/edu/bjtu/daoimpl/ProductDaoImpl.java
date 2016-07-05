@@ -44,33 +44,77 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
-    public List queryProduct() {
+    public List<Product> queryProduct() {
         ResultSet res=null;
         StringBuffer sql=new StringBuffer();
         sql.append("select * from t_product");
         Connection conn=UtilDB.getConn();
-        List<Vector<String>> list=new ArrayList<Vector<String>>();
-        try {
-            PreparedStatement stat=conn.prepareStatement(sql.toString());
+            List<Product> list=new ArrayList<Product>();
+            try {
+                PreparedStatement stat=conn.prepareStatement(sql.toString());
             res=stat.executeQuery();
             while(res.next()){
-                Vector<String> v=new Vector<String>();
-               String id=res.getString("product_id");
+                Product p=new Product();
+                String id=res.getString("product_id");
                 String name=res.getString("product_name");
                 String price=res.getString("price");
                 String company=res.getString("company");
                 String number=res.getString("num");
-                v.add(id);
-                v.add(name);
-                v.add(price);
-                v.add(company);
-                v.add(number);
-                list.add(v);
+                p.setId(id);
+                p.setName(name);
+                p.setPrice(Double.valueOf(price));
+                p.setCompany(company);
+                p.setNumber(Integer.valueOf(number));
+                list.add(p);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         System.out.println("size is "+list.size());
         return list;
+    }
+
+    @Override
+    public boolean delete(String id){
+        StringBuffer sql=new StringBuffer();
+        Connection conn=UtilDB.getConn();
+        sql.append("delete from t_product where product_id=?");
+        try {
+            PreparedStatement stat=conn.prepareStatement(sql.toString());
+            stat.setString(1,id);
+            stat.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean update(Product product) {
+        String id=product.getId();
+        StringBuffer sql=new StringBuffer();
+        sql.append("update t_product set product_name=?,price=?,company=?,num=? where product_id=?");
+        Connection conn=UtilDB.getConn();
+        System.out.println("conn is"+conn);
+        PreparedStatement preparedStatement=null;
+        int count=0;
+        try {
+            preparedStatement=conn.prepareStatement(sql.toString());
+            preparedStatement.setString(1,product.getName());
+            preparedStatement.setDouble(2,product.getPrice());
+            preparedStatement.setString(3,product.getCompany());
+            preparedStatement.setInt(4,product.getNumber());
+            preparedStatement.setString(5,product.getId());
+            count=preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            UtilDB.closeParament(null,preparedStatement,conn,null);
+        }
+        if(count!=0){
+            System.out.println("修改成功");
+        }
+        System.out.println("update函数知行");
+        return false;
     }
 }
