@@ -18,7 +18,7 @@ public class ProductDaoImpl implements ProductDao{
     public void addProduct(Product product){
         StringBuffer sql=new StringBuffer();
         Connection conn=null;
-        sql.append("insert into t_product(product_id,product_name,price,company,num) values(?,?,?,?,?)");
+        sql.append("insert into t_product(product_id,product_name,price,company,num,productno) values(?,?,?,?,?,?)");
         conn=UtilDB.getConn();
         System.out.println("conn is"+conn);
         PreparedStatement preparedStatement=null;
@@ -30,6 +30,7 @@ public class ProductDaoImpl implements ProductDao{
             preparedStatement.setDouble(3,product.getPrice());
             preparedStatement.setString(4,product.getCompany());
             preparedStatement.setInt(5,product.getNumber());
+            preparedStatement.setString(6,product.getProductNo());
             count=preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -60,11 +61,13 @@ public class ProductDaoImpl implements ProductDao{
                 String price=res.getString("price");
                 String company=res.getString("company");
                 String number=res.getString("num");
+                String no=res.getString("productno");
                 p.setId(id);
                 p.setName(name);
                 p.setPrice(Double.valueOf(price));
                 p.setCompany(company);
                 p.setNumber(Integer.valueOf(number));
+                p.setProductNo(no);
                 list.add(p);
             }
         } catch (SQLException e) {
@@ -116,5 +119,27 @@ public class ProductDaoImpl implements ProductDao{
         }
         System.out.println("update函数知行");
         return false;
+    }
+
+    @Override
+    public boolean ifNoExist(String str) {
+        boolean flag=true;
+        StringBuffer buffer=new StringBuffer();
+        buffer.append("select productno from t_product where productno=?");
+        Connection conn=UtilDB.getConn();
+        try {
+            PreparedStatement p=conn.prepareStatement(buffer.toString());
+            p.setString(1,str);
+            ResultSet res=p.executeQuery();
+            res.last();
+            int count=res.getRow();
+            if(count>0)
+                flag=false;
+            UtilDB.closeParament(null,p,conn,res);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("The result is "+flag);
+        return flag;
     }
 }

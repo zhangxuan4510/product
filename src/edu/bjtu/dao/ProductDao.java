@@ -12,4 +12,5 @@ public interface ProductDao {
     public List<Product> queryProduct();
     public boolean delete(String name);
     public boolean update(Product product);
+    public boolean ifNoExist(String str);
 }

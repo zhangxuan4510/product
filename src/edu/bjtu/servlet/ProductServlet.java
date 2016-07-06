@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.UUID;
 import java.util.Vector;
+
+import static java.lang.System.out;
 
 /**
  * Created by zhangxuan on 2016/7/4.
@@ -33,6 +37,14 @@ public class ProductServlet extends HttpServlet {
             this.update(request,response);
         }else if("delete".equals(method)){
             this.deleteupdateData(request,response);
+        }else if("noExist".equals(method)){
+            boolean flag=new ProductDaoImpl().ifNoExist(request.getParameter("productNo"));
+            PrintWriter out = response.getWriter();
+            if(flag){
+                out.print("true");
+            }else{
+                out.print("false");
+            }
         }
     }
 
@@ -41,7 +53,8 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        String productID=request.getParameter("productID");
+        String productID= UUID.randomUUID().toString();
+        String productNo=request.getParameter("productNo");
         String productName=request.getParameter("productName");
         String price_str=request.getParameter("price");
         String company=request.getParameter("company");
@@ -54,9 +67,10 @@ public class ProductServlet extends HttpServlet {
         pro.setPrice(price);
         pro.setCompany(company);
         pro.setNumber(number);
+        pro.setProductNo(productNo);
         ProductDao productDao=new ProductDaoImpl();
         productDao.addProduct(pro);
-        request.getRequestDispatcher("Success.jsp").forward(request,response);
+        request.getRequestDispatcher("QueryProduct.jsp").forward(request,response);
     }
 
     private void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -76,12 +90,13 @@ public class ProductServlet extends HttpServlet {
     private void toUpdatePaget(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String id=request.getParameter("id");
         request.setAttribute("id",id);
-        System.out.println("id is "+id);
+        out.println("id is "+id);
         request.getRequestDispatcher("UpdatePage.jsp").forward(request,response);
     }
 
     private void updateData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String productID=request.getParameter("productID");
+        String productNo=request.getParameter("productNo");
         String productName=request.getParameter("productName");
         String price_str=request.getParameter("price");
         String company=request.getParameter("company");
@@ -94,6 +109,7 @@ public class ProductServlet extends HttpServlet {
         pro.setPrice(price);
         pro.setCompany(company);
         pro.setNumber(number);
+        pro.setProductNo(productNo);
         ProductDao productDao=new ProductDaoImpl();
         productDao.update(pro);
         request.getRequestDispatcher("Success.jsp").forward(request,response);

@@ -9,10 +9,13 @@ public class Product {
     private double price;
     private String company;
     private int number;
+    private String productNo;
 
     public String getId() {
         return id;
     }
+
+
 
     public void setId(String id) {
         this.id = id;
@@ -48,5 +51,13 @@ public class Product {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public String getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(String productNo) {
+        this.productNo = productNo;
     }
 }
