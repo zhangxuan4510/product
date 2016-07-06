@@ -30,21 +30,13 @@ public class ProductServlet extends HttpServlet {
         }else if("query".equals(method)){
             this.query(request,response);
         }else if("toUpdatePage".equals(method)){
-            this.toUpdatePaget(request,response);
+            this.toUpdatePage(request,response);
         }else if("updateData".equals(method)){
             this.updateData(request,response);
-        }else if("update".equals(method)){
-            this.update(request,response);
-        }else if("delete".equals(method)){
-            this.deleteupdateData(request,response);
+        } else if("delete".equals(method)){
+            this.deleteUpdateData(request,response);
         }else if("noExist".equals(method)){
-            boolean flag=new ProductDaoImpl().ifNoExist(request.getParameter("productNo"));
-            PrintWriter out = response.getWriter();
-            if(flag){
-                out.print("true");
-            }else{
-                out.print("false");
-            }
+            this.checkNoExist(request,response);
         }
     }
 
@@ -80,20 +72,21 @@ public class ProductServlet extends HttpServlet {
         request.getRequestDispatcher("QueryProduct.jsp").forward(request,response);
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        ProductDaoImpl p=new ProductDaoImpl();
-        List<Product> list=p.queryProduct();
-        request.setAttribute("list",list);
-        request.getRequestDispatcher("UpdateProduct.jsp").forward(request,response);
-    }
-
-    private void toUpdatePaget(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+//    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+//        ProductDaoImpl p=new ProductDaoImpl();
+//        List<Product> list=p.queryProduct();
+//        request.setAttribute("list",list);
+//        request.getRequestDispatcher("QueryProduct.jsp").forward(request,response);
+//    }
+    //调向更新一条的结果的页面
+    private void toUpdatePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String id=request.getParameter("id");
         request.setAttribute("id",id);
         out.println("id is "+id);
         request.getRequestDispatcher("UpdatePage.jsp").forward(request,response);
     }
 
+    //提交更新的数据到处理的函数
     private void updateData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String productID=request.getParameter("productID");
         String productNo=request.getParameter("productNo");
@@ -115,11 +108,20 @@ public class ProductServlet extends HttpServlet {
         request.getRequestDispatcher("Success.jsp").forward(request,response);
     }
 
-    private void deleteupdateData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    private void deleteUpdateData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
           String id=request.getParameter("id");
           ProductDao productDao=new ProductDaoImpl();
           productDao.delete(id);
-          request.getRequestDispatcher("Success.jsp").forward(request,response);
+          request.getRequestDispatcher("QueryProduct.jsp").forward(request,response);
     }
 
+    private void checkNoExist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        boolean flag=new ProductDaoImpl().ifNoExist(request.getParameter("productNo"));
+        PrintWriter out = response.getWriter();
+        if(flag){
+            out.print("true");
+        }else{
+            out.print("false");
+        }
+    }
 }

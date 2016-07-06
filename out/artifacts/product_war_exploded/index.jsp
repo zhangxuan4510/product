@@ -13,6 +13,5 @@
   <body>
   <a href="AddProduct.jsp">添加商品</a>
   <a href="QueryProduct.jsp">查询商品</a><br>
-  <a href="ProductServlet?method=update">修改</a>
   </body>
 </html>

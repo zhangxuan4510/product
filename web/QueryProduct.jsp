@@ -13,34 +13,52 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .container{
+            width: 60%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-      <table border="1">
-          <tr>
-              <th>商品ID</th>
-              <th>商品编号</th>
-              <th>商品名称</th>
-              <th>商品价格</th>
-              <th>商品厂家</th>
-              <th>商品价格</th>
-          </tr>
-          <c:forEach items="${list}" var="p">
+      <div class="container">
+          <table border="1">
               <tr>
-                  <td>${p.id}</td>
-                  <td>${p.productNo}</td>
-                  <td>${p.name}</td>
-                  <td>${p.price}</td>
-                  <td>${p.company}</td>
-                  <td>${p.number}</td>
-                  <td><a href="ProductServlet?method=toUpdatePage&id=${p.id}">修改</a></td>
-                  <td><a href="ProductServlet?method=delete&id=${p.id}">删除</a></td>
+                  <th align="center" colspan="8">欢迎使用商品管理系统</th>
               </tr>
-          </c:forEach>
-          <tr>
-              <td colspan="6"><a href="ProductServlet?method=query">查询</a> <a href="AddProduct.jsp">添加</a></td>
-          </tr>
-      </table>
-      <a href="index.jsp">主页</a><br>
-      <a href="QueryProduct.jsp">查询商品</a>
+              <tr>
+                  <th>商品ID</th>
+                  <th>商品编号</th>
+                  <th>商品名称</th>
+                  <th>商品价格</th>
+                  <th>商品厂家</th>
+                  <th>商品价格</th>
+                  <th>更新</th>
+              </tr>
+              <c:forEach items="${list}" var="p">
+                  <tr>
+                      <td>${p.id}</td>
+                      <td>${p.productNo}</td>
+                      <td>${p.name}</td>
+                      <td>${p.price}</td>
+                      <td>${p.company}</td>
+                      <td>${p.number}</td>
+                      <td><a href="ProductServlet?method=toUpdatePage&id=${p.id}">修改</a></td>
+                      <td><a href="ProductServlet?method=delete&id=${p.id}" onclick="return sureDelete()">删除</a></td>
+                  </tr>
+              </c:forEach>
+              <tr>
+                  <td align="center " colspan="8"><a href="ProductServlet?method=query">查询</a> <a href="AddProduct.jsp">添加</a></td>
+              </tr>
+          </table>
+      </div>
+
+      <script type="text/javascript">
+          function sureDelete() {
+              var flag=confirm("您确定要删除该条商品记录吗？");
+              return flag;
+          }
+      </script>
+
 </body>
 </html>

@@ -150,7 +150,6 @@
                if (xmlhttp.readyState==4 && xmlhttp.status==200)
                {
                    flag=xmlhttp.responseText;
-                   alert("come in "+flag);
                    if(flag=="true"){
                        $("#noSpan").html("输入正确");
                        $("#noSpan").css("color","green");
