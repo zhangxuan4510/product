@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b410ac5-3537-4c3f-a25a-36410053ed5b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/Success.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/UpdateProduct.jsp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/read.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/product_war_exploded/WEB-INF/classes/edu/bjtu/daoimpl/ProductDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/product_war_exploded/WEB-INF/classes/edu/bjtu/daoimpl/ProductDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/product/edu/bjtu/daoimpl/ProductDaoImpl.class" afterPath="$PROJECT_DIR$/out/production/product/edu/bjtu/daoimpl/ProductDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/product_war_exploded/AddProduct.jsp" afterPath="$PROJECT_DIR$/out/artifacts/product_war_exploded/AddProduct.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/product_war_exploded/QueryProduct.jsp" afterPath="$PROJECT_DIR$/out/artifacts/product_war_exploded/QueryProduct.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/product_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/product_war_exploded/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/bjtu/daoimpl/ProductDaoImpl.java" afterPath="$PROJECT_DIR$/src/edu/bjtu/daoimpl/ProductDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/bjtu/servlet/ProductServlet.java" afterPath="$PROJECT_DIR$/src/edu/bjtu/servlet/ProductServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/AddProduct.jsp" afterPath="$PROJECT_DIR$/web/AddProduct.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/QueryProduct.jsp" afterPath="$PROJECT_DIR$/web/QueryProduct.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="product.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,28 +29,7 @@
     <favorites_list name="product" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddProduct.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/AddProduct.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryProduct.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/QueryProduct.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,11 +71,12 @@
         <option value="$PROJECT_DIR$/src/edu/bjtu/model/Product.java" />
         <option value="$PROJECT_DIR$/web/UpdateProduct.jsp" />
         <option value="$PROJECT_DIR$/src/edu/bjtu/dao/ProductDao.java" />
-        <option value="$PROJECT_DIR$/src/edu/bjtu/daoimpl/ProductDaoImpl.java" />
         <option value="$PROJECT_DIR$/web/AddProduct.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/src/edu/bjtu/servlet/ProductServlet.java" />
         <option value="$PROJECT_DIR$/web/QueryProduct.jsp" />
+        <option value="$PROJECT_DIR$/src/edu/bjtu/daoimpl/ProductDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/edu/bjtu/servlet/ProductServlet.java" />
+        <option value="$PROJECT_DIR$/read.txt" />
       </list>
     </option>
   </component>
@@ -171,20 +147,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="product" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -728,7 +690,7 @@
       <workItem from="1467679708401" duration="4186000" />
       <workItem from="1467688113244" duration="16976000" />
       <workItem from="1467767679883" duration="10188000" />
-      <workItem from="1467785365822" duration="8315000" />
+      <workItem from="1467785365822" duration="10656000" />
     </task>
     <task id="LOCAL-00001" summary="The primary edition">
       <created>1467681380285</created>
@@ -758,11 +720,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467789221536</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="after check&#10;">
+      <created>1467796720613</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467796720613</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51347000" />
+    <option name="totallyTimeSpent" value="53688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -791,7 +760,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14069591" sideWeight="0.76797384" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.204236" sideWeight="0.76797384" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24054463" sideWeight="0.23202614" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -852,7 +821,8 @@
     <MESSAGE value="The primary edition" />
     <MESSAGE value="the finish edition but need advance&#10;" />
     <MESSAGE value="7/6 pm first Time&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="7/6 pm first Time&#10;" />
+    <MESSAGE value="after check&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="after check&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -894,7 +864,7 @@
           <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1786#1795#0" expanded="true" />
+            <element signature="e#1782#1791#0" expanded="true" />
             <element signature="method#update#0;class#ProductDaoImpl#0" expanded="false" />
           </folding>
         </state>
@@ -955,7 +925,7 @@
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1786#1795#0" expanded="true" />
+            <element signature="e#1782#1791#0" expanded="true" />
             <element signature="method#update#0;class#ProductDaoImpl#0" expanded="false" />
           </folding>
         </state>
@@ -1022,7 +992,7 @@
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1786#1795#0" expanded="true" />
+            <element signature="e#1782#1791#0" expanded="true" />
             <element signature="method#update#0;class#ProductDaoImpl#0" expanded="false" />
           </folding>
         </state>
@@ -1089,7 +1059,7 @@
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1786#1795#0" expanded="true" />
+            <element signature="e#1782#1791#0" expanded="true" />
             <element signature="method#update#0;class#ProductDaoImpl#0" expanded="false" />
           </folding>
         </state>
@@ -1103,14 +1073,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/bjtu/servlet/Servlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/bjtu/util/UtilDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/productList.jsp" />
     <entry file="file://$PROJECT_DIR$/web/SucessfulPage.jsp" />
     <entry file="jar://G:/Program Files/Java/jdk1.8.0_65/src.zip!/com/sun/jmx/snmp/IPAcl/ParserTokenManager.java">
@@ -1198,33 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/bjtu/daoimpl/ProductDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2863">
-          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1786#1795#0" expanded="true" />
-            <element signature="method#update#0;class#ProductDaoImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/bjtu/servlet/ProductServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#doGet#0;class#ProductServlet#0" expanded="false" />
-            <element signature="method#add#0;class#ProductServlet#0" expanded="false" />
-            <element signature="method#query#0;class#ProductServlet#0" expanded="false" />
-            <element signature="method#updateData#0;class#ProductServlet#0" expanded="false" />
-            <element signature="method#checkNoExist#0;class#ProductServlet#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/UpdatePage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6">
@@ -1241,10 +1176,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/bjtu/util/UtilDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/bjtu/daoimpl/ProductDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1782#1791#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/bjtu/servlet/ProductServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#doGet#0;class#ProductServlet#0" expanded="false" />
+            <element signature="method#query#0;class#ProductServlet#0" expanded="false" />
+            <element signature="method#updateData#0;class#ProductServlet#0" expanded="false" />
+            <element signature="method#checkNoExist#0;class#ProductServlet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/AddProduct.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        <state relative-caret-position="-14">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
           <folding />
         </state>
       </provider>

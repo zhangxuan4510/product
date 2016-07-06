@@ -50,9 +50,10 @@ public class ProductDaoImpl implements ProductDao{
         StringBuffer sql=new StringBuffer();
         sql.append("select * from t_product");
         Connection conn=UtilDB.getConn();
-            List<Product> list=new ArrayList<Product>();
+        List<Product> list=new ArrayList<Product>();
+        PreparedStatement stat=null;
             try {
-                PreparedStatement stat=conn.prepareStatement(sql.toString());
+                stat=conn.prepareStatement(sql.toString());
             res=stat.executeQuery();
             while(res.next()){
                 Product p=new Product();
@@ -72,7 +73,9 @@ public class ProductDaoImpl implements ProductDao{
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }finally {
+                UtilDB.closeParament(null,stat,conn,null);
+            }
         System.out.println("size is "+list.size());
         return list;
     }
@@ -81,13 +84,15 @@ public class ProductDaoImpl implements ProductDao{
     public boolean delete(String id){
         StringBuffer sql=new StringBuffer();
         Connection conn=UtilDB.getConn();
+        PreparedStatement stat=null;
         sql.append("delete from t_product where product_id=?");
         try {
-            PreparedStatement stat=conn.prepareStatement(sql.toString());
+            stat=conn.prepareStatement(sql.toString());
             stat.setString(1,id);
             stat.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+            UtilDB.closeParament(null,stat,conn,null);
         }
         return false;
     }
@@ -114,10 +119,6 @@ public class ProductDaoImpl implements ProductDao{
         }finally {
             UtilDB.closeParament(null,preparedStatement,conn,null);
         }
-        if(count!=0){
-            System.out.println("修改成功");
-        }
-        System.out.println("update函数知行");
         return false;
     }
 
@@ -126,20 +127,23 @@ public class ProductDaoImpl implements ProductDao{
         boolean flag=true;
         StringBuffer buffer=new StringBuffer();
         buffer.append("select productno from t_product where productno=?");
+        PreparedStatement stat=null;
+        ResultSet res=null;
         Connection conn=UtilDB.getConn();
         try {
-            PreparedStatement p=conn.prepareStatement(buffer.toString());
-            p.setString(1,str);
-            ResultSet res=p.executeQuery();
+            stat=conn.prepareStatement(buffer.toString());
+            stat.setString(1,str);
+            res=stat.executeQuery();
             res.last();
             int count=res.getRow();
             if(count>0)
                 flag=false;
-            UtilDB.closeParament(null,p,conn,res);
+            UtilDB.closeParament(null,stat,conn,res);
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+              UtilDB.closeParament(null,stat,conn,res);
         }
-        System.out.println("The result is "+flag);
         return flag;
     }
 }

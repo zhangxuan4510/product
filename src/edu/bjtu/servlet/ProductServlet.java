@@ -72,12 +72,6 @@ public class ProductServlet extends HttpServlet {
         request.getRequestDispatcher("QueryProduct.jsp").forward(request,response);
     }
 
-//    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//        ProductDaoImpl p=new ProductDaoImpl();
-//        List<Product> list=p.queryProduct();
-//        request.setAttribute("list",list);
-//        request.getRequestDispatcher("QueryProduct.jsp").forward(request,response);
-//    }
     //调向更新一条的结果的页面
     private void toUpdatePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String id=request.getParameter("id");
